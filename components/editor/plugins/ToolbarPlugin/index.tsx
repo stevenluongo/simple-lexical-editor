@@ -48,7 +48,6 @@ import {
 import {
   $createParagraphNode,
   $getNodeByKey,
-  $getRoot,
   $getSelection,
   $INTERNAL_isPointSelection,
   $isElementNode,
@@ -74,7 +73,6 @@ import {
 import { Dispatch, useCallback, useEffect, useState } from "react";
 import * as React from "react";
 import { IS_APPLE } from "@/components/editor/shared/environment";
-
 import useModal from "../../hooks/useModal";
 import DropDown, { DropDownItem } from "../../ui/DropDown";
 import DropdownColorPicker from "../../ui/DropdownColorPicker";
@@ -126,12 +124,9 @@ function getCodeLanguageOptions(): [string, string][] {
 const CODE_LANGUAGE_OPTIONS = getCodeLanguageOptions();
 
 const FONT_FAMILY_OPTIONS: [string, string][] = [
-  ["Arial", "Arial"],
-  ["Courier New", "Courier New"],
-  ["Georgia", "Georgia"],
-  ["Times New Roman", "Times New Roman"],
-  ["Trebuchet MS", "Trebuchet MS"],
-  ["Verdana", "Verdana"],
+  ["var(--font-syne)", "Syne"],
+  ["var(--font-nunito)", "Nunito"],
+  ["var(--font-grotesk)", "Space Grotesk"],
 ];
 
 const FONT_SIZE_OPTIONS: [string, string][] = [
@@ -315,6 +310,28 @@ function BlockFormatDropDown({
         <i className="icon h3" />
         <span className="text">Heading 3</span>
       </DropDownItem>
+      <DropDownItem
+        className={"item " + dropDownActiveClass(blockType === "h4")}
+        onClick={() => formatHeading("h4")}
+      >
+        <i className="icon h4" />
+        <span className="text">Heading 4</span>
+      </DropDownItem>
+      <DropDownItem
+        className={"item " + dropDownActiveClass(blockType === "h5")}
+        onClick={() => formatHeading("h5")}
+      >
+        <i className="icon h5" />
+        <span className="text">Heading 5</span>
+      </DropDownItem>
+      <DropDownItem
+        className={"item " + dropDownActiveClass(blockType === "h6")}
+        onClick={() => formatHeading("h6")}
+      >
+        <i className="icon h6" />
+        <span className="text">Heading 6</span>
+      </DropDownItem>
+
       <DropDownItem
         className={"item " + dropDownActiveClass(blockType === "bullet")}
         onClick={formatBulletList}
@@ -544,7 +561,7 @@ export default function ToolbarPlugin({
   const [fontSize, setFontSize] = useState<string>("15px");
   const [fontColor, setFontColor] = useState<string>("#000");
   const [bgColor, setBgColor] = useState<string>("#fff");
-  const [fontFamily, setFontFamily] = useState<string>("Arial");
+  const [fontFamily, setFontFamily] = useState<string>("Nunito");
   const [elementFormat, setElementFormat] = useState<ElementFormatType>("left");
   const [isLink, setIsLink] = useState(false);
   const [isBold, setIsBold] = useState(false);
@@ -649,7 +666,7 @@ export default function ToolbarPlugin({
         )
       );
       setFontFamily(
-        $getSelectionStyleValueForProperty(selection, "font-family", "Arial")
+        $getSelectionStyleValueForProperty(selection, "font-family", "Nunito")
       );
       let matchingParent;
       if ($isLinkNode(parent)) {

@@ -33,7 +33,6 @@ import KeywordsPlugin from "@/components/editor/plugins/KeywordsPlugin";
 import { LayoutPlugin } from "@/components/editor/plugins/LayoutPlugin/LayoutPlugin";
 import LinkPlugin from "@/components/editor/plugins/LinkPlugin";
 import ListMaxIndentLevelPlugin from "@/components/editor/plugins/ListMaxIndentLevelPlugin";
-import MarkdownShortcutPlugin from "@/components/editor/plugins/MarkdownShortcutPlugin";
 import MentionsPlugin from "@/components/editor/plugins/MentionsPlugin";
 import TabFocusPlugin from "@/components/editor/plugins/TabFocusPlugin";
 import TableCellActionMenuPlugin from "@/components/editor/plugins/TableActionMenuPlugin";
@@ -108,7 +107,6 @@ export default function Editor(): JSX.Element {
           placeholder={placeholder}
           ErrorBoundary={LexicalErrorBoundary}
         />
-        <MarkdownShortcutPlugin />
         <CodeHighlightPlugin />
         <ListPlugin />
         <CheckListPlugin />

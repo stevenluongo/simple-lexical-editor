@@ -6,7 +6,15 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {},
+  theme: {
+    extend: {
+      fontFamily: {
+        nunito: ["var(--font-nunito), sans-serif"],
+        syne: ["var(--font-syne), sans-serif"],
+        grotesk: ["var(--font-grotesk), sans-serif"],
+      },
+    },
+  },
   plugins: [],
 };
 export default config;
