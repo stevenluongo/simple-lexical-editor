@@ -275,10 +275,7 @@
 .PlaygroundEditorTheme__tableCellActionButton:hover {
   background-color: #ddd;
 }
-.PlaygroundEditorTheme__characterLimit {
-  display: inline;
-  background-color: #ffbbbb !important;
-}
+
 .PlaygroundEditorTheme__ol1 {
   padding: 0;
   margin: 0;
