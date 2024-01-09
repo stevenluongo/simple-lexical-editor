@@ -14,7 +14,6 @@ import {
   $convertFromMarkdownString,
   $convertToMarkdownString,
 } from "@lexical/markdown";
-import { useCollaborationContext } from "@lexical/react/LexicalCollaborationContext";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { mergeRegister } from "@lexical/utils";
 import { CONNECTED_COMMAND, TOGGLE_CONNECT_COMMAND } from "@lexical/yjs";
@@ -81,7 +80,6 @@ export default function ActionsPlugin({
   const [connected, setConnected] = useState(false);
   const [isEditorEmpty, setIsEditorEmpty] = useState(true);
   const [modal, showModal] = useModal();
-  const { isCollabActive } = useCollaborationContext();
 
   useEffect(() => {
     return mergeRegister(
@@ -105,12 +103,7 @@ export default function ActionsPlugin({
       ({ dirtyElements, prevEditorState, tags }) => {
         // If we are in read only mode, send the editor state
         // to server and ask for validation if possible.
-        if (
-          !isEditable &&
-          dirtyElements.size > 0 &&
-          !tags.has("historic") &&
-          !tags.has("collaboration")
-        ) {
+        if (!isEditable && dirtyElements.size > 0 && !tags.has("historic")) {
           validateEditorState(editor);
         }
         editor.getEditorState().read(() => {
@@ -211,22 +204,7 @@ export default function ActionsPlugin({
       >
         <i className="markdown" />
       </button>
-      {isCollabActive && (
-        <button
-          className="action-button connect"
-          onClick={() => {
-            editor.dispatchCommand(TOGGLE_CONNECT_COMMAND, !connected);
-          }}
-          title={`${
-            connected ? "Disconnect" : "Connect"
-          } Collaborative Editing`}
-          aria-label={`${
-            connected ? "Disconnect from" : "Connect to"
-          } a collaborative editing server`}
-        >
-          <i className={connected ? "disconnect" : "connect"} />
-        </button>
-      )}
+
       {modal}
     </div>
   );

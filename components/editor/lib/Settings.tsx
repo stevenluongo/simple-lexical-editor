@@ -25,8 +25,6 @@ export default function Settings(): JSX.Element {
       isCharLimit,
       isCharLimitUtf8,
       isAutocomplete,
-      showTreeView,
-      showNestedEditorTreeView,
       disableBeforeInput,
       showTableOfContents,
       shouldUseLexicalContextMenu,
@@ -68,18 +66,7 @@ export default function Settings(): JSX.Element {
             checked={measureTypingPerf}
             text="Measure Perf"
           />
-          <Switch
-            onClick={() => setOption("showTreeView", !showTreeView)}
-            checked={showTreeView}
-            text="Debug View"
-          />
-          <Switch
-            onClick={() =>
-              setOption("showNestedEditorTreeView", !showNestedEditorTreeView)
-            }
-            checked={showNestedEditorTreeView}
-            text="Nested Editors Debug View"
-          />
+
           <Switch
             onClick={() => {
               setOption("isRichText", !isRichText);

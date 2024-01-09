@@ -383,9 +383,6 @@
 .PlaygroundEditorTheme__nestedListItem:after {
   display: none;
 }
-.PlaygroundEditorTheme__tokenComment {
-  color: slategray;
-}
 .PlaygroundEditorTheme__tokenPunctuation {
   color: #999;
 }

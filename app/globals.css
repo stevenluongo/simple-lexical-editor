@@ -71,11 +71,6 @@ header h1 {
   border-radius: 0;
 }
 
-.editor-shell .editor-container.plain-text {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
 .editor-scroller {
   min-height: 150px;
   border: 0;
@@ -464,14 +459,6 @@ i.close {
   background-image: url(/icons/close.svg);
 }
 
-i.figma {
-  background-image: url(/icons/figma.svg);
-}
-
-i.poll {
-  background-image: url(/icons/card-checklist.svg);
-}
-
 i.columns {
   background-image: url(/icons/3-columns.svg);
 }
@@ -524,10 +511,6 @@ i.redo {
   background-image: url(/icons/arrow-clockwise.svg);
 }
 
-i.sticky {
-  background-image: url(/icons/sticky.svg);
-}
-
 i.mic {
   background-image: url(/icons/mic.svg);
 }
@@ -546,10 +529,6 @@ i.diagram-2 {
 
 i.user {
   background-image: url(/icons/user.svg);
-}
-
-i.equation {
-  background-image: url(/icons/plus-slash-minus.svg);
 }
 
 i.gif {
@@ -1554,120 +1533,6 @@ button.toolbar-item.active i {
   margin: 0 4px;
 }
 
-.sticky-note-container {
-  position: absolute;
-  z-index: 9;
-  width: 120px;
-  display: inline-block;
-}
-
-.sticky-note {
-  line-height: 1;
-  text-align: left;
-  width: 120px;
-  margin: 25px;
-  padding: 20px 10px;
-  position: relative;
-  border: 1px solid #e8e8e8;
-  font-family: "Reenie Beanie";
-  font-size: 24px;
-  border-bottom-right-radius: 60px 5px;
-  display: block;
-  cursor: move;
-}
-
-.sticky-note:after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  right: -0px;
-  bottom: 20px;
-  width: 120px;
-  height: 25px;
-  background: rgba(0, 0, 0, 0.2);
-  box-shadow: 2px 15px 5px rgba(0, 0, 0, 0.4);
-  transform: matrix(-1, -0.1, 0, 1, 0, 0);
-}
-
-.sticky-note.yellow {
-  border-top: 1px solid #fdfd86;
-  background: linear-gradient(
-    135deg,
-    #ffff88 81%,
-    #ffff88 82%,
-    #ffff88 82%,
-    #ffffc6 100%
-  );
-}
-
-.sticky-note.pink {
-  border-top: 1px solid #e7d1e4;
-  background: linear-gradient(
-    135deg,
-    #f7cbe8 81%,
-    #f7cbe8 82%,
-    #f7cbe8 82%,
-    #e7bfe1 100%
-  );
-}
-
-.sticky-note-container.dragging {
-  transition: none !important;
-}
-
-.sticky-note div {
-  cursor: text;
-}
-
-.sticky-note .delete {
-  border: 0;
-  background: none;
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  font-size: 10px;
-  cursor: pointer;
-  opacity: 0.5;
-}
-
-.sticky-note .delete:hover {
-  font-weight: bold;
-  opacity: 1;
-}
-
-.sticky-note .color {
-  border: 0;
-  background: none;
-  position: absolute;
-  top: 8px;
-  right: 25px;
-  cursor: pointer;
-  opacity: 0.5;
-}
-
-.sticky-note .color:hover {
-  opacity: 1;
-}
-
-.sticky-note .color i {
-  display: block;
-  width: 12px;
-  height: 12px;
-  background-size: contain;
-}
-
-.excalidraw-button {
-  border: 0;
-  padding: 0;
-  margin: 0;
-  background-color: transparent;
-}
-
-.excalidraw-button.selected {
-  outline: 2px solid rgb(60, 132, 244);
-  user-select: none;
-}
-
 .github-corner:hover .octo-arm {
   animation: octocat-wave 560ms ease-in-out;
 }
@@ -1701,15 +1566,6 @@ button.toolbar-item.active i {
 
 .spacer {
   letter-spacing: -2px;
-}
-
-.editor-equation {
-  cursor: default;
-  user-select: none;
-}
-
-.editor-equation.focused {
-  outline: 2px solid rgb(60, 132, 244);
 }
 
 button.item i {

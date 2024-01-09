@@ -38,12 +38,8 @@ import * as ReactDOM from "react-dom";
 import useModal from "../../hooks/useModal";
 import { EmbedConfigs } from "../AutoEmbedPlugin";
 import { INSERT_COLLAPSIBLE_COMMAND } from "../CollapsiblePlugin";
-import { InsertEquationDialog } from "../EquationsPlugin";
-import { INSERT_EXCALIDRAW_COMMAND } from "../ExcalidrawPlugin";
 import { INSERT_IMAGE_COMMAND, InsertImageDialog } from "../ImagesPlugin";
 import InsertLayoutDialog from "../LayoutPlugin/InsertLayoutDialog";
-import { INSERT_PAGE_BREAK } from "../PageBreakPlugin";
-import { InsertPollDialog } from "../PollPlugin";
 import { InsertTableDialog } from "../TablePlugin";
 
 class ComponentPickerOption extends MenuOption {
@@ -234,25 +230,7 @@ function getBaseOptions(editor: LexicalEditor, showModal: ShowModal) {
       onSelect: () =>
         editor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined),
     }),
-    new ComponentPickerOption("Page Break", {
-      icon: <i className="icon page-break" />,
-      keywords: ["page break", "divider"],
-      onSelect: () => editor.dispatchCommand(INSERT_PAGE_BREAK, undefined),
-    }),
-    new ComponentPickerOption("Excalidraw", {
-      icon: <i className="icon diagram-2" />,
-      keywords: ["excalidraw", "diagram", "drawing"],
-      onSelect: () =>
-        editor.dispatchCommand(INSERT_EXCALIDRAW_COMMAND, undefined),
-    }),
-    new ComponentPickerOption("Poll", {
-      icon: <i className="icon poll" />,
-      keywords: ["poll", "vote"],
-      onSelect: () =>
-        showModal("Insert Poll", (onClose) => (
-          <InsertPollDialog activeEditor={editor} onClose={onClose} />
-        )),
-    }),
+
     ...EmbedConfigs.map(
       (embedConfig) =>
         new ComponentPickerOption(`Embed ${embedConfig.contentName}`, {
@@ -262,14 +240,7 @@ function getBaseOptions(editor: LexicalEditor, showModal: ShowModal) {
             editor.dispatchCommand(INSERT_EMBED_COMMAND, embedConfig.type),
         })
     ),
-    new ComponentPickerOption("Equation", {
-      icon: <i className="icon equation" />,
-      keywords: ["equation", "latex", "math"],
-      onSelect: () =>
-        showModal("Insert Equation", (onClose) => (
-          <InsertEquationDialog activeEditor={editor} onClose={onClose} />
-        )),
-    }),
+
     new ComponentPickerOption("GIF", {
       icon: <i className="icon gif" />,
       keywords: ["gif", "animate", "image", "file"],
