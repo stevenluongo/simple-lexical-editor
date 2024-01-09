@@ -6,7 +6,6 @@ import {
   SettingsContext,
   useSettings,
 } from "@/components/editor/context/SettingsContext";
-import { SharedAutocompleteContext } from "@/components/editor/context/SharedAutocompleteContext";
 import { SharedHistoryContext } from "@/components/editor/context/SharedHistoryContext";
 import PlaygroundNodes from "@/components/editor/nodes/PlaygroundNodes";
 import DocsPlugin from "@/components/editor/plugins/DocsPlugin";
@@ -37,14 +36,14 @@ export default function LexicalEditor(): JSX.Element {
       <LexicalComposer initialConfig={initialConfig}>
         <SharedHistoryContext>
           <TableContext>
-            <SharedAutocompleteContext>
+            <>
               <div className="editor-shell">
                 <Editor />
               </div>
               <Settings />
               {isDevPlayground ? <DocsPlugin /> : null}
               {isDevPlayground ? <PasteLogPlugin /> : null}
-            </SharedAutocompleteContext>
+            </>
           </TableContext>
         </SharedHistoryContext>
       </LexicalComposer>

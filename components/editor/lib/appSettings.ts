@@ -3,7 +3,6 @@ export const isDevPlayground: boolean = false;
 export const DEFAULT_SETTINGS = {
   disableBeforeInput: false,
   emptyEditor: isDevPlayground,
-  isAutocomplete: false,
   isCharLimit: false,
   isCharLimitUtf8: false,
   isMaxLength: false,

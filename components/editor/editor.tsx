@@ -26,7 +26,6 @@ import { CAN_USE_DOM } from "@/components/editor/shared/canUseDOM";
 import { useSettings } from "./context/SettingsContext";
 import { useSharedHistoryContext } from "./context/SharedHistoryContext";
 import ActionsPlugin from "./plugins/ActionsPlugin";
-import AutocompletePlugin from "./plugins/AutocompletePlugin";
 import AutoEmbedPlugin from "./plugins/AutoEmbedPlugin";
 import AutoLinkPlugin from "./plugins/AutoLinkPlugin";
 import CodeActionMenuPlugin from "./plugins/CodeActionMenuPlugin";
@@ -62,7 +61,6 @@ export default function Editor(): JSX.Element {
   const { historyState } = useSharedHistoryContext();
   const {
     settings: {
-      isAutocomplete,
       isMaxLength,
       isCharLimit,
       isCharLimitUtf8,
@@ -107,7 +105,7 @@ export default function Editor(): JSX.Element {
 
   return (
     <>
-      {isRichText && <ToolbarPlugin setIsLinkEditMode={setIsLinkEditMode} />}
+      <ToolbarPlugin setIsLinkEditMode={setIsLinkEditMode} />
       <div className="editor-container">
         {isMaxLength && <MaxLengthPlugin maxLength={30} />}
         <DragDropPaste />
@@ -177,7 +175,6 @@ export default function Editor(): JSX.Element {
             maxLength={5}
           />
         )}
-        {isAutocomplete && <AutocompletePlugin />}
         <div>{showTableOfContents && <TableOfContentsPlugin />}</div>
         {shouldUseLexicalContextMenu && <ContextMenuPlugin />}
         <ActionsPlugin isRichText={isRichText} />

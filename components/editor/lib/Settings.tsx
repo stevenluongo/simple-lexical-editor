@@ -24,7 +24,6 @@ export default function Settings(): JSX.Element {
       isMaxLength,
       isCharLimit,
       isCharLimitUtf8,
-      isAutocomplete,
       disableBeforeInput,
       showTableOfContents,
       shouldUseLexicalContextMenu,
@@ -89,11 +88,7 @@ export default function Settings(): JSX.Element {
             checked={isMaxLength}
             text="Max Length"
           />
-          <Switch
-            onClick={() => setOption("isAutocomplete", !isAutocomplete)}
-            checked={isAutocomplete}
-            text="Autocomplete"
-          />
+
           <Switch
             onClick={() => {
               setOption("disableBeforeInput", !disableBeforeInput);
