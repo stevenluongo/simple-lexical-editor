@@ -44,7 +44,6 @@ import * as React from "react";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 
 import { useSharedHistoryContext } from "../context/SharedHistoryContext";
-import EmojisPlugin from "../plugins/EmojisPlugin";
 import KeywordsPlugin from "../plugins/KeywordsPlugin";
 import LinkPlugin from "../plugins/LinkPlugin";
 import MentionsPlugin from "../plugins/MentionsPlugin";
@@ -377,7 +376,6 @@ export default function ImageComponent({
               <AutoFocusPlugin />
               <MentionsPlugin />
               <LinkPlugin />
-              <EmojisPlugin />
               <HashtagPlugin />
               <KeywordsPlugin />
 

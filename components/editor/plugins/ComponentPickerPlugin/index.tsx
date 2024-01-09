@@ -38,7 +38,7 @@ import * as ReactDOM from "react-dom";
 import useModal from "../../hooks/useModal";
 import { EmbedConfigs } from "../AutoEmbedPlugin";
 import { INSERT_COLLAPSIBLE_COMMAND } from "../CollapsiblePlugin";
-import { INSERT_IMAGE_COMMAND, InsertImageDialog } from "../ImagesPlugin";
+import { InsertImageDialog } from "../ImagesPlugin";
 import InsertLayoutDialog from "../LayoutPlugin/InsertLayoutDialog";
 import { InsertTableDialog } from "../TablePlugin";
 
@@ -240,16 +240,6 @@ function getBaseOptions(editor: LexicalEditor, showModal: ShowModal) {
             editor.dispatchCommand(INSERT_EMBED_COMMAND, embedConfig.type),
         })
     ),
-
-    new ComponentPickerOption("GIF", {
-      icon: <i className="icon gif" />,
-      keywords: ["gif", "animate", "image", "file"],
-      onSelect: () =>
-        editor.dispatchCommand(INSERT_IMAGE_COMMAND, {
-          altText: "Cat typing on a laptop",
-          src: "",
-        }),
-    }),
     new ComponentPickerOption("Image", {
       icon: <i className="icon image" />,
       keywords: ["image", "photo", "picture", "file"],

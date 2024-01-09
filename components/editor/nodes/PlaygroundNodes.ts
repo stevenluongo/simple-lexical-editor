@@ -21,7 +21,6 @@ import { TableCellNode, TableNode, TableRowNode } from "@lexical/table";
 import { CollapsibleContainerNode } from "../plugins/CollapsiblePlugin/CollapsibleContainerNode";
 import { CollapsibleContentNode } from "../plugins/CollapsiblePlugin/CollapsibleContentNode";
 import { CollapsibleTitleNode } from "../plugins/CollapsiblePlugin/CollapsibleTitleNode";
-import { EmojiNode } from "./EmojiNode";
 import { ImageNode } from "./ImageNode";
 import { InlineImageNode } from "./InlineImageNode";
 import { KeywordNode } from "./KeywordNode";
@@ -48,7 +47,6 @@ const PlaygroundNodes: Array<Klass<LexicalNode>> = [
   ImageNode,
   InlineImageNode,
   MentionNode,
-  EmojiNode,
   KeywordNode,
   HorizontalRuleNode,
   TweetNode,

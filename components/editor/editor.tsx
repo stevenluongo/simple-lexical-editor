@@ -24,8 +24,6 @@ import CollapsiblePlugin from "@/components/editor/plugins/CollapsiblePlugin";
 import ComponentPickerPlugin from "@/components/editor/plugins/ComponentPickerPlugin";
 import DragDropPaste from "@/components/editor/plugins/DragDropPastePlugin";
 import DraggableBlockPlugin from "@/components/editor/plugins/DraggableBlockPlugin";
-import EmojiPickerPlugin from "@/components/editor/plugins/EmojiPickerPlugin";
-import EmojisPlugin from "@/components/editor/plugins/EmojisPlugin";
 import FloatingLinkEditorPlugin from "@/components/editor/plugins/FloatingLinkEditorPlugin";
 import ImagesPlugin from "@/components/editor/plugins/ImagesPlugin";
 import InlineImagePlugin from "@/components/editor/plugins/InlineImagePlugin";
@@ -86,11 +84,9 @@ export default function Editor(): JSX.Element {
         <AutoFocusPlugin />
         <ClearEditorPlugin />
         <ComponentPickerPlugin />
-        <EmojiPickerPlugin />
         <AutoEmbedPlugin />
 
         <MentionsPlugin />
-        <EmojisPlugin />
         <HashtagPlugin />
         <KeywordsPlugin />
         <AutoLinkPlugin />
